@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, IndexRoute, Route, browserHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 import App from './app/main/container';
 import NotFound from './common/components/NotFound';
@@ -26,7 +26,7 @@ if (env === 'dev') {
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <IndexRoute path='/' component={App}/>
+      <Route path='/' component={App}/>
       <Route path='/' component={App}>
         <Route path='*' component={NotFound}/>
       </Route>
