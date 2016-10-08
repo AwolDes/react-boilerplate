@@ -1,3 +1,6 @@
+*.sh
+webfonts
+.idea
 # Logs
 logs
 *.log

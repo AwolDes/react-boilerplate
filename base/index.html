@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/><!-- Basic Page Config-->
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'/>
+  <meta name='description' content=''/>
+  <meta name='keywords' content=''/>
+  <title>React Boiler Plate</title>
+  <script>
+    window.onerror = function (errorMsg, url, lineNumber) {
+        document.getElementById('FatalErrorMessage').style.display = 'block';
+    };
+  </script>
+</head>
+<body>
+    <div style='display: none;' id='FatalErrorMessage'>
+        <span>A Fatal error occured. Please refresh the page</span>
+    </div>
+    <div id="container"></div>
+    <script src="/app.js"></script>
+</body>
+</html>
