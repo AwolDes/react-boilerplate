@@ -58,8 +58,8 @@ export const PatchAPI = (URL, data, token = null) => {
   );
 };
 
-export const GetAPI = (URL) => {
-  return fetch(URL, sendAPIRequest('GET')).then(
+export const GetAPI = (URL, data= null) => {
+  return fetch(url_base + URL + '?' + serializeGet(data), sendAPIRequest('GET', null)).then(
     res => res.json(),
     err => {
       throw Error('API Returned Malformed JSON');
