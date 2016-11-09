@@ -85,13 +85,6 @@ var config = {
   plugins: plugins
 };
 
-if (env === 'production') {
-  config.module.loaders.push({
-    test: require.resolve('trackjs'),
-    loader: 'exports?trackJs'
-  });
-}
-
 if (env === 'dev') {
   var compiler = webpack(config);
 

@@ -13,7 +13,7 @@ const store = configureStore();
 
 var env = process.env.NODE_ENV || 'dev';
 
-// HOT RELOADING
+// HOT RELOADING - comment if not wanted
 if (env === 'dev') {
   var head = document.getElementsByTagName('head')[0];
   var script = document.createElement('script');
