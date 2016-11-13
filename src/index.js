@@ -27,9 +27,7 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path='/' component={App}/>
-      <Route path='/' component={App}>
-        <Route path='*' component={NotFound}/>
-      </Route>
+      <Route path='*' component={NotFound}/>
     </Router>
   </Provider>,
   document.getElementById('container')
