@@ -1,6 +1,8 @@
 *.sh
 webfonts
 .idea
+app.js
+app.js.map
 # Logs
 logs
 *.log
