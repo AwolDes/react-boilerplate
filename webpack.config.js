@@ -28,7 +28,11 @@ if (env === 'production' || env === 'staging') {
 
 // Conditionally add plugins for Development
 else {
-
+  plugins.push(new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+    }
+  }));
 }
 
 var config = {

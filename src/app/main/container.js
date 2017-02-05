@@ -1,8 +1,8 @@
-import { connect } from 'react-redux';
-import app from './page.js';
+import { connect } from "react-redux";
+import app from "./page.js";
 import {
   GetReq
-} from './actions';
+} from "./actions";
 
 const mapStateToProps = (state) => {
   return {

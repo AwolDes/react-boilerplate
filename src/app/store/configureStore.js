@@ -1,13 +1,13 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from './root-reducer';
-import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
+import { createStore, applyMiddleware, compose } from "redux";
+import rootReducer from "./root-reducer";
+import thunkMiddleware from "redux-thunk";
+import createLogger from "redux-logger";
 
 const loggerMiddleware = createLogger();
 
 let middleware = [ thunkMiddleware ]; // middleware on both prod & dev is currently none
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== "production") {
   middleware = [ ...middleware, loggerMiddleware ]; // append dev middleware when not on prod
 } else {
   middleware = [ ...middleware ]; // append prod middleware

@@ -1,4 +1,4 @@
-import {SENDING_GET, SUCCESSFUL_GET, FAILED_GET} from './actions';
+import {SENDING_GET, SUCCESSFUL_GET, FAILED_GET} from "./actions";
 
 const initialState = {
 

@@ -1,1 +1,9 @@
-@import "partials/defaults";
+@import "utils/grid";
+@import "utils/loaders";
+@import "utils/errors";
+
+h1, h2{
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}

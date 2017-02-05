@@ -1,0 +1,130 @@
+$breakpoint-map: (
+  xxs: (
+    min-width: 1px,
+    max-width: 500px,
+  ),
+  xs: (
+    min-width: 501px,
+    max-width: 768px,
+  ),
+  sm: (
+    min-width: 769px,
+    max-width: 991px,
+  ),
+  md: (
+    min-width: 992px,
+    max-width: 1199px,
+  ),
+  lg: (
+    min-width: 1200px,
+    max-width: null,
+  )
+);
+
+$gutter: 15px;
+$gridColumns: 12;
+
+%column-styles {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float:left;
+  width: 100%;
+}
+
+%hidden-utilities-helper-template {
+  display: block;
+}
+
+%visible-utilities-helper-template {
+  display: none;
+}
+
+@mixin col-x-list($type) {
+  @for $i from 1 through $gridColumns {
+    .col-#{$type}-#{$i} { @extend %column-styles; }
+  }
+}
+
+@mixin ResponsiveHelpersSetup($type) {
+  .hidden-#{$type} { @extend %hidden-utilities-helper-template; }
+  .visible-#{$type} { @extend %visible-utilities-helper-template; }
+}
+
+@mixin Columns($type) {
+  @for $number from 1 through $gridColumns {
+    .#{"col-" + $type + "-" + $number} {
+      width: (($number/$gridColumns)*100%);
+    }
+    .#{"col-" + $type + "-offset-" + $number} {
+      margin-left: (($number/$gridColumns)*100%);
+    }
+  }
+}
+
+@mixin Responsive-Utilities($type) {
+  .#{"visible-" + $type} {
+    display: block;
+  }
+  .#{"hidden-" + $type} {
+    display: none;
+  }
+}
+
+@include Columns("xxs");
+
+@each $label, $map in $breakpoint-map {
+
+  @include col-x-list($label);
+  @include ResponsiveHelpersSetup($label);
+
+  @if map-get($map, min-width) != null {
+
+    @if map-get($map, max-width) != null {
+      @media (min-width: map-get($map, min-width)) and (max-width: map-get($map, max-width)) {
+        @include Responsive-Utilities($label);
+      }
+    }
+
+    @media (min-width: map-get($map, min-width)) {
+      @include Columns($label);
+    }
+
+  } @else if map-get($map, max-width) != null  {
+
+    @media (max-width: map-get($map, max-width)) {
+      @include Columns($label);
+      @include Responsive-Utilities($label);
+    }
+
+  }
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.np-row {
+  > div {
+    padding: 0;
+  }
+}
+
+.row:after, .row:before, .np-row:after, .np-row:before {
+  display: table;
+  content: " ";
+}
+
+.row:after, .np-row:after {
+  clear: both;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
