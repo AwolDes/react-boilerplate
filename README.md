@@ -30,6 +30,7 @@ A lightweight and simple React and Redux boilerplate, using Jest as a test harne
 * Linting (with [ESLint](http://eslint.org/))
 * Build with [webpack](https://webpack.github.io/)
 * Develop locally with [webpack-dev-server](http://webpack.github.io/docs/webpack-dev-server.html)
+* [Jest](https://facebook.github.io/jest/) test harness
 
 ### Cheers To
 
