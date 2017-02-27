@@ -1,9 +1,16 @@
+@import "variables/sidebar";
 @import "utils/grid";
 @import "utils/loaders";
 @import "utils/errors";
+@import "ui/sidebar";
+@import "normalize";
 
 h1, h2{
   text-align: center;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100;
+}
+
+#Wrapper {
+  padding-left: $sidebar_width;
 }

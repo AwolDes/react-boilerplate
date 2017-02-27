@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from "react";
+import SideBar from "../../common/components/ui/SideBar";
 
 class app extends Component {
   constructor(props, context) {
@@ -13,18 +14,26 @@ class app extends Component {
   }
 
   render() {
+
+
     return (
       <div>
-        <h1>Welcome to React Boiler Plate!</h1>
-        <h2>Default Helper Classes</h2>
-        <div className="loader"></div>
+        <SideBar collapseSidebar={this.props.collapseSidebar} collapse={this.props.collapse} />
+        <div id="contentWrapper" >
+          <div id="Wrapper">
+            {this.props.children}
+          </div>
+        </div>
       </div>
     );
   };
 }
 
 app.propTypes = {
-  GetReq: PropTypes.func
+  GetReq: PropTypes.func,
+  collapseSidebar: PropTypes.func.isRequired,
+  collapse: PropTypes.bool.isRequired,
+  children: PropTypes.func
 };
 
 export default app;

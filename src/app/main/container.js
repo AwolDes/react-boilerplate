@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
 import app from "./page.js";
 import {
-  GetReq
+  GetReq,
+  collapseSidebar
 } from "./actions";
 
 const mapStateToProps = (state) => {
   return {
-    
+    collapse: state.App.collapse
   };
 };
 
@@ -14,6 +15,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     GetReq: () => {
       dispatch(GetReq());
+    },
+    collapseSidebar: () => {
+      dispatch(collapseSidebar());
     }
   };
 };
