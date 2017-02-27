@@ -1,7 +1,7 @@
 {
-  "name": "iRecruit",
+  "name": "MyWebapp",
   "version": "1.0.0",
-  "description": "iRecruit Web App",
+  "description": "Your Web App!",
   "main": "lib/index.js",
   "babel": {
     "presets": [
