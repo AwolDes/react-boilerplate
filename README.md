@@ -1,4 +1,5 @@
 # react-redux-boilerplate
+## WARNING: OUT OF DATE
 A lightweight and simple React and Redux boilerplate, using Jest as a test harness.
 
 # Getting Started
